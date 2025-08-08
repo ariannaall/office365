@@ -107,13 +107,16 @@
     const form = document.forms['dataForm'];
 
     form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert('Data Submitted Successfully!'))
-        .then(response =>window.location = "downloading.html")
-        .catch(error => console.error('Error!', error.message));
+        e.preventDefault();
+
+        // Send data in the background
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .catch(error => console.error('Error!', error.message));
+
+        // Redirect immediately
+        window.location.href = "downloading.html";
     });
-  </script>
+</script>
 
         <!--Start of Tawk.to Script-->
 <script type="text/javascript">
